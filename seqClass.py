@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys, re
 from argparse import ArgumentParser
@@ -12,6 +12,7 @@ if len(sys.argv) == 1:
 
 args = parser.parse_args()
 
+args.seq = args.seq.upper()                 # convert input seq to upper-case
 if re.search('^[ACGTU]+$', args.seq):
     if re.search('T', args.seq):
         print ('The sequence is DNA')
